@@ -10,12 +10,7 @@ body{
 }
 .car-item{
   width:100%;
- max-height: 245px !important;
-}
-.front-image{
-  height: 146px;
-  max-height: 146px;
-  object-fit: contain;
+ max-height: 300px !important;
 }
 h4{
   text-align: center;
