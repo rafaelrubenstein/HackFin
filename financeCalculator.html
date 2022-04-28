@@ -10,7 +10,8 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5d3897d384.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/styles.css">
-    
+    <link rel="stylesheet" href="../styles/blogstyle.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -78,19 +79,19 @@ tr:nth-child(even) {
 <!-- User income-->
   <label for="income">income: </label>
   <input type="number" min="0" id="income" value="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
-  
+
   <!-- User 401k deposit-->
   <label for="age">401k: </label>
   <input type="number" id="401k"   value="0"  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
-  
+
     <!-- UserTax deductables-->
   <label for="deduct">Tax deductables: </label>
   <input type="number" id="deduct"  value="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
-  
+
    <!-- User IRA contributions-->
     <label for="duc">IRA contributions: </label>
   <input type="number" id="ira" value="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
-  
+
    <!-- User Marital filling status-->
   <select name="Status" id="status">
     <option value="1">single / married filing single</option>
@@ -106,7 +107,7 @@ tr:nth-child(even) {
  <!-- Table fo the out puts-->
 <table>
   <tr> <!-- First row-->
-  
+
     <th></th>
      <th>Bracket</th>
       <th> Percentage</th>
@@ -142,12 +143,12 @@ tr:nth-child(even) {
     <td><p id="ChartAKP"></td>
     <td><p id="ChartAKD"></td>
   </tr>
-  
+
 </table>
 
 </div>
-  
-  
+
+
 </div>
 
 <script>
@@ -181,7 +182,7 @@ var status = document.getElementById('status').value; // maritalable status
  GVStaxB[4]= 164925;
  GVStaxB[5]= 209425;
  GVStaxB[6]= 523600;
- 
+
  // Federal married tax bracket
   var GVMtaxB = [];
   GVMtaxB[0] =0;
@@ -192,7 +193,7 @@ var status = document.getElementById('status').value; // maritalable status
  GVMtaxB[5]= 418850;
  GVMtaxB[6]= 628300;
 
- // Federal head tax bracket 
+ // Federal head tax bracket
  var GVHtaxB = [];
   GVHtaxB[0]= 0;
  GVHtaxB[1] =14200;
@@ -212,7 +213,7 @@ var status = document.getElementById('status').value; // maritalable status
  GVtaxP[5]= .32;
  GVtaxP[6]= .35;
  GVtaxP[7]= .37;
- 
+
  //nys single tax bracket
  var STStaxB = [];
  STStaxB[0]= 0;
@@ -225,7 +226,7 @@ STStaxB[1] =8500 ;
  STStaxB[7]= 1077550;
   STStaxB[8]= 5000000;
   STStaxB[9]= 25000000;
- 
+
    //nys married tax bracket
    var STMtaxB = [];
   STMtaxB[0]= 0;
@@ -265,7 +266,7 @@ STHtaxB[1] = 12800;
   STtaxP[8]= .0965;
   STtaxP[9]= .1030;
   STtaxP[10]= .1090;
-  
+
   //nyc single tax brackets
     var CTStaxB = [];
   CTStaxB[0]= 0;
@@ -287,7 +288,7 @@ STHtaxB[1] = 12800;
  CTHtaxB[2]= 30000;
  CTHtaxB[3]= 60000;
 
-  
+
     //nyc  tax percentage
    var CTtaxP = [];
     CTtaxP[0]= 0;
@@ -321,43 +322,43 @@ TOtax =0;
     GVtaxcal(GVHtaxB,GVtaxP);
        STtaxcal(STHtaxB,STtaxP);
          CTtaxcal(CTHtaxB,CTtaxP);
-         
+
     }else if(status ==2){// married
     GVtaxcal(GVMtaxB,GVtaxP);
        STtaxcal(STMtaxB,STtaxP);
          CTtaxcal(CTMtaxB,CTtaxP);
-         
+
     } else{// single
     GVtaxcal(GVStaxB,GVtaxP);
        STtaxcal(STStaxB,STtaxP);
          CTtaxcal(CTStaxB,CTtaxP);
-    
+
     }
-    
+
     //calculate total tax by adding city, state, and federal tax
    TOtax =(GVtax + STtax + CTtax);
-   
 
-  
-  
+
+
+
 document.getElementById('ChartGVB').innerHTML =( GVbracket);
 document.getElementById('ChartGVP').innerHTML =( GVtax/taxableincome).toFixed(4);
 document.getElementById('ChartGVD').innerHTML =( GVtax).toFixed(2);
-   
+
 document.getElementById('ChartSTB').innerHTML =( STbracket);
 document.getElementById('ChartSTP').innerHTML =( STtax/taxableincome).toFixed(4);
 document.getElementById('ChartSTD').innerHTML =( STtax).toFixed(2);
-        
+
 document.getElementById('ChartCTB').innerHTML =( CTbracket);
 document.getElementById('ChartCTP').innerHTML =( CTtax /taxableincome).toFixed(4);
 document.getElementById('ChartCTD').innerHTML =( CTtax).toFixed(2);
-              
+
 document.getElementById('ChartTTP').innerHTML =( ( TOtax /taxableincome).toFixed(4));
 document.getElementById('ChartTTD').innerHTML =( TOtax).toFixed(2);
-                
+
 document.getElementById('ChartAKP').innerHTML =( (1-( TOtax /taxableincome)).toFixed(4));
 document.getElementById('ChartAKD').innerHTML =( (taxableincome -TOtax) .toFixed(2));
-   
+
 
 }
 // function that callculate federal tax rate. (gov tax braket array , (gov tax percentage array )
@@ -366,7 +367,7 @@ function GVtaxcal(taxb,taxp){
  GVtax =0;
   GVtaxper =0;
   GVbracket =0;
-  
+
   // loops through all tax bracket untill it find the one it falls under
 for (var i = 0; i < taxb.length; i++) {
 if(taxableincome < taxb[i]){ // find correct tax bracket
@@ -384,7 +385,7 @@ if(taxableincome > taxb[taxb.length-1]){
  }
 }
 
-// function that callculate State tax rate. (State tax braket array 
+// function that callculate State tax rate. (State tax braket array
 //, (state tax percentage array )
 function STtaxcal(taxb,taxp){
  //reset starting values
@@ -393,10 +394,10 @@ STtaxper =0;
 STbracket =0;
 
  // loops through all tax bracket untill it find the one it falls under
-for (var i = 0; i < taxb.length; i++) { 
+for (var i = 0; i < taxb.length; i++) {
 if(taxableincome < taxb[i]){ // find correct tax bracket
  STtax = (taxableincome - taxb[i-1]) *taxp[i] + pretaxcal(taxb,taxp,i); // sets tax owed, adds lower tax brackets with a pretaxcal function
-  
+
      STtaxper = taxp[i]; //sets tax percentage
     STbracket =i;  // sets tax bracket
       i = taxb.length+1;  // breaks the loop
@@ -411,7 +412,7 @@ if(taxableincome > taxb[taxb.length-1]){
  }
 }
 
-// function that callculate City tax rate. (City tax braket array 
+// function that callculate City tax rate. (City tax braket array
 //, (City tax percentage array )
 function CTtaxcal(taxb,taxp){
 //reset starting values
@@ -420,10 +421,10 @@ CTtaxper =0;
 CTbracket =0;
 
 // loops through all tax bracket untill it find the one it falls under
-for (var i = 0; i < taxb.length; i++) { 
+for (var i = 0; i < taxb.length; i++) {
 if(taxableincome < taxb[i]){// find correct tax bracket
  CTtax = (taxableincome - taxb[i-1]) *taxp[i] + pretaxcal(taxb,taxp,i); // sets tax owed, adds lower tax brackets with a pretaxcal function
-   
+
     CTtaxper = taxp[i]; //sets tax percentage
     CTbracket =i; // sets tax bracket
       i = taxb.length+1;  // breaks the loop
@@ -447,7 +448,7 @@ temp = (taxb[j] * taxp[j])+temp; // adds all the brackets toaol tax  together
 }
 
 return temp; // gives the lower tax brackets value
- 
+
 }
 </script>
 </body>
