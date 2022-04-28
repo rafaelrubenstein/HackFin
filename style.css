@@ -1,22 +1,13 @@
 /* start of stylesheet for site */
 body {
-    background-color: #60D956;
+    background-color: #2BD837;
+    font-family: 'Open Sans', sans-serif;
 }
 
-div {
-    
-}
-
-
-title {
-
-}
-
-nav {
-
-}
 
 a {
-
+    font-family: 'Open Sans', sans-serif;
 }
-
+.blog-a:hover {
+color: black;
+}
