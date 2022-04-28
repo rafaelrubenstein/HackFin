@@ -24,6 +24,9 @@ h4{
 a {
     font-family: 'Open Sans', sans-serif;
 }
+.blog-a{
+  color:white
+}
 .blog-a:hover {
 color: black;
 }
