@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color: #60D956;
+}
+
+
+.nav {
+  color: white;
+  padding:  20px;
+  font-size: 20px
+}
+
+
+#dc1{
+ text-align: left;
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+
+
+#dc2{
+ text-align: left;
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+
+
+#dc3{
+ text-align: left;
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="NavDiv">
+ <nav>
+ 
+            
+    </nav>
+    </div>
+
+<!-- 1st-->
+<div id = "set1">
+<div id = "dl1">
+<p  id="link1">
+<br><br><br><a href="https://www.fool.com/the-ascent/mortgages/best-mortgage-lenders/">fool.com/mortgages</a> <br>
+</p>
+ <label for="s1f">Likes:</label>
+ <button id="like1" onclick="liker1()" value ="1">7</button>
+</div>
+<div id = "dc1">
+<p  id="comment1">
+KyleJack#101: I love the layout <br> 
+</p>
+  <label for="c1f">comment:</label>
+  <input type="text" id="c1f">
+   
+ <button id="submit1"  onclick="displayMessage1()">Post</button>
+</div>
+</div>
+
+
+<!-- 2nd-->
+<div id = "set2">
+<div id = "dl2">
+<p  id="link2">
+<br><br><br><a href="https://www.marketwatch.com/">marketwatch.com</a> <br>
+ <br> 
+</p>
+
+
+ <label for="s2f">Likes:</label>
+ <button id="like2" onclick="liker2()" value ="1">5</button>
+</div>
+<div id = "dc2">
+<p  id="comment2">
+ KellySpine#333:This is my favorite website<br>
+</p>
+  <label for="c2f">comment:</label>
+  <input type="text" id="c2f">
+   
+ <button id="submit2" value ="" onclick="displayMessage2()">Post</button>
+</div>
+<div id = "dl2">
+
+
+
+<!-- 3rd-->
+<div id = "set3">
+<div id = "dl3">
+<p  id="link3">
+<br><br><br><a href="https://www.bloomberg.com/news/articles/2022-04-25/should-you-buy-wine-nfts-winemakers-brad-pitt-to-penfolds-bet-on-collectors?srnd=cryptocurrencies-v2">bloomberg.com/nft</a><br>
+</p>
+ <label for="s3f">Likes:</label>
+ <button id="like3" onclick="liker3()" value ="1">1</button>
+</div>
+<div id = "dc3">
+<p  id="comment3">
+CoreyBane#453: This website is too confusing. <br> <br> 
+MarkBack#626: This website gives plenty of information. <br> 
+</p>
+  <label for="c3f">comment:</label>
+  <input type="text" id="c3f">
+   
+ <button id="submit3" onclick="displayMessage3()">Post</button>
+</div>
+<div id = "dl3">
+
+
+
+
+<script>
+var comment1in = document.getElementById('c1f').innerHTML;
+var comment2in = document.getElementById('c2f').innerHTML;
+var comment3in = document.getElementById('c3f').innerHTML;
+
+
+function displayMessage1(){
+comment1in = document.getElementById('c1f').value;
+document.getElementById('comment1').innerHTML= (document.getElementById('comment1').innerHTML +"<br>"+ "GuestUser#123: "+comment1in);
+}
+
+function liker1(){
+if(parseInt(document.getElementById('like1').value) >0){
+document.getElementById('like1').innerHTML = ( parseInt(document.getElementById('like1').innerHTML) +1);
+document.getElementById('like1').value = 0;
+} else {
+document.getElementById('like1').innerHTML = ( parseInt(document.getElementById('like1').innerHTML) -1);
+document.getElementById('like1').value = 1;
+}
+
+
+}
+
+
+function displayMessage2(){
+if(comment2in != null ){
+comment2in = document.getElementById('c2f').value;
+
+document.getElementById('comment2').innerHTML= (document.getElementById('comment2').innerHTML +"<br>"+ "GuestUser#123: "+comment2in);
+}
+}
+
+function liker2(){
+if(parseInt(document.getElementById('like2').value) >0){
+document.getElementById('like2').innerHTML = ( parseInt(document.getElementById('like2').innerHTML) +1);
+document.getElementById('like2').value = 0;
+} else {
+document.getElementById('like2').innerHTML = ( parseInt(document.getElementById('like2').innerHTML) -1);
+document.getElementById('like2').value = 1;
+}
+}
+
+function displayMessage3(){
+comment3in = document.getElementById('c3f').value;
+document.getElementById('comment3').innerHTML= (document.getElementById('comment3').innerHTML +"<br>"+ "GuestUser#123: "+comment3in);
+}
+
+function liker3(){
+if(parseInt(document.getElementById('like3').value) >0){
+document.getElementById('like3').innerHTML = ( parseInt(document.getElementById('like3').innerHTML) +1);
+document.getElementById('like3').value = 0;
+} else {
+document.getElementById('like3').innerHTML = ( parseInt(document.getElementById('like3').innerHTML) -1);
+document.getElementById('like3').value = 1;
+}
+
+
+}
+
+
+
+</script>
+</body>
+
+
+</html>
