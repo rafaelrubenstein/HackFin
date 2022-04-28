@@ -35,3 +35,8 @@ color: black;
     text-align: center;
     margin:0 auto;
 }
+#comment-section{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
