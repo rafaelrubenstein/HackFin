@@ -1,5 +1,6 @@
 body{
   background-color: #2BD837;
+  font-family: 'Open Sans', sans-serif;
 }
 .nav-link{
   color:white;
@@ -18,4 +19,11 @@ body{
 }
 h4{
   text-align: center;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+.blog-a:hover {
+color: black;
 }
