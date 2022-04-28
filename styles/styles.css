@@ -1,0 +1,21 @@
+body{
+  background-color: #2BD837;
+}
+.nav-link{
+  color:white;
+}
+.nav-link{
+    text-decoration: underline;
+}
+.car-item{
+  width:100%;
+ max-height: 245px !important;
+}
+.front-image{
+  height: 146px;
+  max-height: 146px;
+  object-fit: contain;
+}
+h4{
+  text-align: center;
+}
