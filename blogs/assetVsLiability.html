@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asset vs Liability</title>
-    <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 <body>
 
 
     <nav>
-        <a href="/index.html"><img src="/HackFinLogo.png" alt="company logo"></a>
-        <a href="/financeCalculator.html">Finance Calculator</a>
-        <a href="/blogs.html">Blogs</a>
-        <a href="/contactUs.html">Contact Us</a>
+        <a href="../index.html"><img src="" alt="company logo"></a>
+        <a href="../financeCalculator.html">Finance Calculator</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../contactUs.html">Contact Us</a>
     </nav>
 <h1>Asset vs Liability</h1>
 <article>
@@ -45,12 +45,21 @@ in conclusion, be very smart with your purchases. budget and plan accordingly, a
 just because it makes you money doesnt mean its a good asset!
 </section>
 </article>
-<div class="comment-div">
-    <label for="newComment" name="newComment">Add your comment below-</label>
-    <textarea id="newComment"></textarea>
-    <button id="addComments">Add Comment</button>
-    <div id="allComments"></div>
+<!-- add commment section here -->
+<div class="add-comment">
+    <label for="comment">enter comment here</label><br>
+    <input type="text" name="comment" id="comment"><br><br>
+
+    <input type="button" class="btn btn-primary" value="Add comment" id="add-comment">
+
 </div>
+<ul class="list-group" id="comment-section">
+    <li class="list-group-item "> wow great article!
+        <button class=" btn btn-outline-danger btn-sm delete" onclick="deleteComment()">delete comment</button>
+    </li>
+</ul>
+
+
 <script src="comment.js"></script>
 
 </body>

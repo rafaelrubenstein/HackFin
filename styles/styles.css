@@ -27,3 +27,8 @@ a {
 .blog-a:hover {
 color: black;
 }
+.coming-soon{
+    font-size: 5rem;
+    text-align: center;
+    margin:0 auto;
+}
