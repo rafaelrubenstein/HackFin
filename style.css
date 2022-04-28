@@ -19,4 +19,6 @@ nav {
 a {
 
 }
-
+.blog-a:hover {
+color: black;
+}
