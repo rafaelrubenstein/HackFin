@@ -1,4 +1,13 @@
 /* start of stylesheet for site */
+body {
+    background-color: #60D956;
+}
+
+div {
+    
+}
+
+
 title {
 
 }
@@ -8,5 +17,6 @@ nav {
 }
 
 a {
-    
+
 }
+
