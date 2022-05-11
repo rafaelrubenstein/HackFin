@@ -14,21 +14,25 @@ body{
 }
 h4 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2rem; /* font size increased */
 }
 
+/* animation effects for h4 in home */
+
+/* first line */
 h4.first {
   animation: fadeInAnimation ease-in 0.5s
 }
-
+/* second line */
 h4.second {
   animation: fadeInAnimation ease-in 2s
 }
-
+/* third line */
 h4.third {
   animation: fadeInAnimation ease-in 4s
 }
 
+/* animation properties */
 @keyframes fadeInAnimation {
   0% {
       opacity: 0;
@@ -37,8 +41,7 @@ h4.third {
       opacity: 1;
    }
 }
-
-
+/* end of animation */
 
 a {
     font-family: 'Open Sans', sans-serif;
