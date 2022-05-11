@@ -1,6 +1,6 @@
 /* start of stylesheet for site */
 body {
-    background-color: #2BD837;
+    background-color: #435045; /* new background */
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -10,4 +10,8 @@ a {
 }
 .blog-a:hover {
 color: black;
+}
+
+p {
+    color: white;
 }
