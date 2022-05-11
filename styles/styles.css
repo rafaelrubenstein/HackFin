@@ -62,3 +62,22 @@ color: black;
   margin: 0;
   padding: 0;
 }
+
+
+/* for buttons */
+
+
+button#mainb {
+  
+  color: rgb(0, 0, 0); /* text color before user hovers and clicks it */
+  background-color: rgb(174, 173, 173);
+  border: black 1px solid;
+  border-radius: 5px;
+  
+}
+
+/* hover indicates button is pressed */
+button#mainb:hover {
+  background-color: #3e8e41;
+  color: rgb(255, 255, 255); /* text color on hover */
+}
