@@ -1,5 +1,5 @@
 body{
-  background-color: #2BD837;
+  background-color: #435045; /* new background */
   font-family: 'Open Sans', sans-serif;
 }
 .nav-link{
@@ -15,6 +15,7 @@ body{
 h4 {
   text-align: center;
   font-size: 2rem; /* font size increased */
+  color:rgb(255, 255, 255);
 }
 
 /* animation effects for h4 in home */
@@ -63,7 +64,21 @@ color: black;
   padding: 0;
 }
 
+label {
+  color: white;
+}
 
+th {
+  color: white;
+}
+
+td.white {
+  color: white;
+}
+
+td.black {
+  color: black;
+}
 /* for buttons */
 
 
