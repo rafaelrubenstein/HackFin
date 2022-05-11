@@ -6,19 +6,19 @@ if you dont know how money works you have come to the right place. click the lin
 
 ## tools used 
 
--HTML & CSS
--JavaScript
+- HTML & CSS
+- JavaScript
 
 ## Things to be added
-
--backend functionality 
--user log in page 
--more blog posts 
--update blog ui
+ 
+- backend functionality 
+- user log in page 
+- more blog posts 
+- update blog ui
 
 ### contributors 
 
--Lum Sela
--Montique Stevens
--Justin Rodriguez
--Rafael Rubenstein
+- Lum Sela
+- Montique Stevens
+- Justin Rodriguez
+- Rafael Rubenstein
