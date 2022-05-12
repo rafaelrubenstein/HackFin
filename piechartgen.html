@@ -20,6 +20,49 @@ padding-top: 90px;
 #piechart{float:left;
 
 }
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 </style>
   
 </head>
@@ -77,10 +120,39 @@ event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 <input type="number" min="0" id="need" placeholder="0" onkeypress="return (event.charCode !=8 &&
 event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
-  <button id="mainb" onclick="displayMessage()">Submit</button>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Help</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>This is a pie chart generator to show people their income break down</p>
+    
+    <p><b>Income:</b> Your total yearly income </p>
+    <p> <b>Saving:</b> Hom much of your yearly income is devoted to saving </p>
+    <p> <b>Investing:</b> How much do you invest yearly </p>
+    <p> <b>Want:</b> The amount you spend on non esessentialtail costs yealy (example: eating out and entertainment)</p>
+    <p> <b>Need:</b> The amount you spend on  esessentialtail costs yealy(example: electric bill rent, and grocery)</p>
+    <p><b>Submit your break down:</b>This gives a pie chart of your expences </p>
+  <p><b>Submit model break down:</b>This gives a pie chart of  recomended expences. <b>You need to place income only</b> </p>
+    
+  </div>
+
+</div>
+<br>
+  <button id="mainb" onclick="displayMessage()"> Your Break Down</button>
+  <br>
+    <button id="mainc" onclick="displayMessage2()"> Model Break Down</button>
 
    <p id="error"></p>
 </div>
+
+
+
 
 
 <div id="piechart"></div>
@@ -166,6 +238,78 @@ if ((saving + investing +want + need + income)> 0){
 empty =0;
 }
 drawChart() ;
+}
+
+
+
+
+function displayMessage2() {
+
+
+if (parseInt(document.getElementById("income").value)> 0){
+income = parseInt(document.getElementById("income").value);
+} else {
+income = 0;
+}
+
+
+saving = income *.30;
+
+
+
+investing = income* .30;
+
+
+
+want = income *.20;
+
+
+
+
+need =income *.20;
+
+
+unacconted = income - (saving + investing +want + need );
+if (unacconted < 0){
+
+unacconted=0;
+ document.getElementById('error').innerHTML =("ERROR: Income is too low based on other feilds");
+} else{
+unacconted = income - (saving + investing +want + need );
+ document.getElementById('error').innerHTML =("");
+}
+if ((saving + investing +want + need + income)> 0){
+empty =0;
+}
+drawChart() ;
+}
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
 
