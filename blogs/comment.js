@@ -13,19 +13,19 @@ document.getElementById("add-comment").onclick = function () {
 
 // add delete button to li 
     let deletebtn = document.createElement("button");
-    deletebtn.innerHTML = "delete task";
+    deletebtn.innerHTML = "delete comment";
     deletebtn.className = "btn btn-outline-danger btn-sm delete";
     deletebtn.setAttribute("onclick","deleteComment()");
     li.appendChild(deletebtn);
 
    
     if (text === '') {
-        alert("There is no task entered");
+        alert("There is no comment entered");
     }
     else {
         document.getElementById("comment-section").appendChild(li);
     }
-    document.getElementById("task").value = "";
+    document.getElementById("comment").value = "";
 };
 
 
