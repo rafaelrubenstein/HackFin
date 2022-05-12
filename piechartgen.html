@@ -11,14 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  
+
   <style>
-  
+
 #InputDiv{float:left;
 padding-top: 90px;
+padding-left: 9px;
 }
 #piechart{float:left;
-
+padding-left: 9px;
 }
 
 
@@ -64,7 +65,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 </style>
-  
+
 </head>
 
 <body>
@@ -98,25 +99,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 <div id="InputDiv">
-<label for="income">income: </label>
+<label for="income">Income: </label>
 <input type="number" min="0" id="income" placeholder="0" onkeypress="return (event.charCode !=8 &&
 event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
 
-<label for="saving">saving: </label>
+<label for="saving">Saving: </label>
 <input type="number" min="0" id="saving" placeholder="0" onkeypress="return (event.charCode !=8 &&
 event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
 
-<label for="investing">investing: </label>
+<label for="investing">Investing: </label>
 <input type="number" min="0" id="investing" placeholder="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
 
-<label for="want">want: </label>
+<label for="want">Want: </label>
 <input type="number" min="0" id="want" placeholder="0" onkeypress="return (event.charCode !=8 &&
 event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
-<label for="need">need: </label>
+<label for="need">Need: </label>
 <input type="number" min="0" id="need" placeholder="0" onkeypress="return (event.charCode !=8 &&
 event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
 
@@ -131,7 +132,7 @@ event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>This is a pie chart generator to show people their income break down</p>
-    
+
     <p><b>Income:</b> Your total yearly income </p>
     <p> <b>Saving:</b> Hom much of your yearly income is devoted to saving </p>
     <p> <b>Investing:</b> How much do you invest yearly </p>
@@ -139,7 +140,7 @@ event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"><br><br>
     <p> <b>Need:</b> The amount you spend on  esessentialtail costs yealy(example: electric bill rent, and grocery)</p>
     <p><b>Submit your break down:</b>This gives a pie chart of your expences </p>
   <p><b>Submit model break down:</b>This gives a pie chart of  recomended expences. <b>You need to place income only</b> </p>
-    
+
   </div>
 
 </div>
@@ -295,7 +296,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
 }
